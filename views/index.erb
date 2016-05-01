@@ -6,12 +6,18 @@
 	</head>
 	
 	<body>
-		<h1>MovieFinder</h1>
+		<h1>MovieFinder Search Results</h1>
 
-		<p><%= 2 + 2 %></p>
+		<% if @movie.plot == nil %>
 
-		<%["Snickers", "Starburst", "Twix"].each do |candy| %>
-			<p><%= candy %></p>
+		<h2><%= @movie.title %> for <%= params[:title] %></h2>
+
+		<% else %>
+
+		<h2><%= @movie.title %></h2>
+
+		<p><%= @movie.plot %></p>
+
 		<% end %>
 
 	</body>
