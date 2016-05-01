@@ -7,14 +7,16 @@
 	
 	<body>
 
+		<h1>MovieFinder Search Results</h1>
+
+		<p>Enter the Title of the Movie:</p>
 		<form>
 			<input type="search" name="title"></input>
 		</form>
 
+		<% if @title.nil? %>
 
-		<h1>MovieFinder Search Results</h1>
-
-		<% if @movie.plot == nil %>
+		<% elsif @movie.plot == nil %>
 
 		<h2><%= @movie.title %> for <%= params[:title] %></h2>
 
